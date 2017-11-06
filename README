@@ -1,0 +1,14 @@
+1::Se tuvo dificultad en lo que es el linkng de nuestros codigos y para soluconarlo tarde varias hoaras en realizarlo , luego de ver algunos vides tutoriales pude solucionarlo, para ello solo utilice el linking via comando  con el siguiente instruccion ,intente utilizar herramientas de cmake y autoools para compilar el codigo, pero lo deje para despues , par cuando acabe el proyecto , porque era muy corto el tiempo para desarrollar la aplicacion.
+Para poder ccompilarr el siguiente trabajo por consola se utilizara los ishuiente::
+		{
+		g++ -std=c++11 main.cpp glad.o -o  proy1  -I/usr/include/libdrm -lglfw  -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+
+		}
+2::Aprendiendo las funcionalidades de openGL , para eso necesitamos leer la documentacion de la pagina,https://learnopengl.com/#!Getting-started, aprendiendo pipeline permite transformar de 3d a 2d ;pudiendo hacerlo de 2d posicion y 2d pixel.
+
+
+3::http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/ para hacer todo lo posible
+
+4::Se obtuvo una estructura concreta de lo que se debia hacer , revisar el latex.
+5::Se logro una representacion garfica de nuestros objetos , llegando a implemetar fucnionalidades de movimeinto , y poder lograr una primera representacion de nuestar estructura.
+6::Seguimos en proceso de termianr el trabajo , con lo propuesto es los slides(revisar).
