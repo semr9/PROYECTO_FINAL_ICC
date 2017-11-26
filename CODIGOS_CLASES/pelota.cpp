@@ -11,33 +11,58 @@
 
 #include <iostream>
 #include "pelota.h"
-using namespace std;
-
-Pelota::Pelota(const char* a, const char* b, const char* c,float (&v)[20], unsigned int (&i)[6])//, const char* geometryPath = nullptr)
-			:Cargar(a,b,c,v,i){}
-void Pelota::dibujar()
-{
-	if (salto==1)
-    {
-    	pos.y+=0.01;
-    	if(pos.y>=0.5f)
-    		salto=-1;
-    }else if(salto==-1){
-    	pos.y-=0.01;
-    	if(pos.y<=0.0f)
-    		salto=1;
-    }
-	m=glm::mat4(1.0f); 
-	m=glm::translate(m,pos);
+#include "grafica.h"
+#include "movimiento.h"
+#include "control.h"
 	
-	m=glm::rotate(m,0.0f,glm::vec3(0.0f,0.0f,1.0f));
-			
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
-	glBindVertexArray(VAO);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-    glDisable(GL_BLEND);
-
+Pelota::Pelota()
+{
+	cout<<"INICIO Pelota\n";
+	Cargar_control();
+	Cargar_movimiento();
 }
-
- 
+    
+void Pelota::Cargar_grafica(const char* a, const char* b, const char* c,float (&v)[20], unsigned int (&i)[6],int flag)
+	{	
+		/*PREPARACION DE NUESTRO OBJETO GRAFICA DE pelota*/
+		pelota_g=new Graficar(a, b,c,v,i);
+		shader_pelota=new Shader(pelota_g->vertexPath, pelota_g->fragmentPath);	    
+		pelota_g->llenado_vertices();
+		pelota_g->creacion_textura(flag);
+		shader_pelota->use(); 
+		shader_pelota->setInt("texture1", 0);
+	}	
+void Pelota::Cargar_movimiento()
+	{
+		/*PREPARACION DE NUESTRO  OBJERTO MOVIMEINTO PARA pelota1*/
+		pelota_m=new Movimiento;
+	}
+void Pelota::Cargar_colision()
+	{
+		/*PREPARACION LA COLISION*/
+	}
+void Pelota::Cargar_control()
+	{
+		pelota_c=new Control();
+	}				
+		
+void Pelota::dibujar_pelota()
+	{
+		/*DIBUJAMOS Pelota1*/
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, pelota_g->texture1);
+        shader_pelota->use();
+		shader_pelota->setMat4("model", pelota_m->m);
+		pelota_g->dibujar();
+	}	
+	
+void Pelota::limpiar_pelota()
+	{	
+		pelota_g->limpiar();
+	}
+		
+Pelota::~Pelota()
+	{
+		delete pelota_g;
+		delete pelota_m;
+	}
