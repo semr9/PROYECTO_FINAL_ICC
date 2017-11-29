@@ -18,10 +18,9 @@ class Model
 	/*FUNCIONES DE LA CLASE*/
 	void Cargando_movimiento(Jugador *a,Jugador *b,Pelota *c,Arco *e,Arco *f);
 	void loop_model(Jugador *a,Jugador *b,Pelota *c);
-	
+
 	~Model();
 
 };
-
 #endif
 

@@ -12,7 +12,7 @@
 #include <iostream>
 #include "pelota.h"
 #include "grafica.h"
-#include "movimiento.h"
+#include "movimiento_pelota.h"
 #include "control.h"
 	
 Pelota::Pelota()
@@ -35,7 +35,7 @@ void Pelota::Cargar_grafica(const char* a, const char* b, const char* c,float (&
 void Pelota::Cargar_movimiento()
 	{
 		/*PREPARACION DE NUESTRO  OBJERTO MOVIMEINTO PARA pelota1*/
-		pelota_m=new Movimiento;
+		pelota_m=new Movimiento_pelota;
 	}
 void Pelota::Cargar_colision()
 	{

@@ -49,21 +49,22 @@ void View::InicializacionPantalla()
 void View::Cargando_objetos(Estadio *campo,Jugador *jugador1,Jugador *jugador2,Pelota *pelota,Arco *arco1,Arco *arco2)
 	{	
 	 	/*PREPARACION DE NUESTRO OBJETO PANTALLA*/
-		campo->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/bernabeu.jpg",vertices2,indices1,GL_RGB);
+		
+		campo->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/bernabeu.jpg",vertices2,indices1,GL_RGB);
 		
 	 	/*PREPARACION DE NUESTRO PRIMER OBJERTO, LLAMADO PLAYER2*/
-		jugador1->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_jugador.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_jugador.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/messi.png",vertices1,indices1,GL_RGBA);
+		jugador1->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_jugador.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_jugador.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/messi.png",vertices1,indices1,GL_RGBA);
 		
 		/*PREPARACION DE NUESTRO PRIMER OBJERTO, LLAMADO PLAYER1*/
-		jugador2->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_jugador.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_jugador.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/maradona.png",vertices1,indices1,GL_RGBA);
+		jugador2->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_jugador.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_jugador.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/maradona.png",vertices1,indices1,GL_RGBA);
 		
 		/*PREPARACION DE NUESTRO OBJETO PELOTA*/
-		pelota->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pelota.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pelota.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/pelota.png",vertices3,indices1,GL_RGBA);
+		pelota->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pelota.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pelota.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/pelota.png",vertices3,indices1,GL_RGBA);
 		
 		/*PREPARACION DE NUESTRO OBJETO ARCO1*/
-		arco1->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/arco2.png",vertices4,indices1,GL_RGBA);
+		arco1->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/arco2.png",vertices4,indices1,GL_RGBA);
 		/*PREPARACION DE NUESTRO OBJETO ARCO2*/
-		arco2->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/PARTE_2/IMAGENES/arco2.png",vertices5,indices1,GL_RGBA);
+		arco2->Cargar_grafica("/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.vs", "/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/SHADERS/shader_pantalla.fs","/home/sebastian/Documents/LIBRIRY_GLFW/pruebas/PROYECT_1/JUEGO_CABEZONES/EjemploOpenGLCmake/src/IMAGENES/arco2.png",vertices5,indices1,GL_RGBA);
 	}
 void View::loop_graficar(Estadio *campo,Jugador *jugador1,Jugador *jugador2,Pelota *pelota,Arco *arco1,Arco *arco2)
 	{

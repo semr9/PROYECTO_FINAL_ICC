@@ -14,6 +14,10 @@
 #include "jugador.h"
 #include "arco.h"
 #include "pelota.h"
+
+#include "model.h"
+#include "view.h"
+
 Model::Model()
 	{
 		cout<<"CREO MODEL";
@@ -61,7 +65,6 @@ void Model::loop_model(Jugador *a,Jugador *b,Pelota *c)
     	
     	ultimo_frame = tiempo_frame;
 	}
-		
 Model::~Model()
 	{
 		cout<<"TERMINO MODEL\n";

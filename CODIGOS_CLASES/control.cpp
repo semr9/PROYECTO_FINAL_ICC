@@ -11,7 +11,8 @@
 
 #include <iostream>
 #include "control.h"
-#include "movimiento.h"
+#include "movimiento_jugador.h"
+#include "movimiento_pelota.h"
 using namespace std;
 
 Control::Control()
@@ -19,7 +20,7 @@ Control::Control()
 		cout<<"CREO CONTROL\n";	
 	}
 
-void Control::teclas(Movimiento *objeto,Movimiento *objeto_b,GLFWwindow *ventana,int salto,int adelante,int atras,int cabecear_atras,int cabecear_adelante )
+void Control::teclas(Movimiento_jugador *objeto,Movimiento_pelota *objeto_b,GLFWwindow *ventana,int salto,int adelante,int atras,int cabecear_atras,int cabecear_adelante )
 	{
 	/*SALTO */
 		if (glfwGetKey(ventana, salto) == GLFW_PRESS)
@@ -55,7 +56,7 @@ void Control::teclas(Movimiento *objeto,Movimiento *objeto_b,GLFWwindow *ventana
 					}
 				}
 	}
-void Control::colision_cuerpo(Movimiento *objeto_a,Movimiento *objeto_b)
+void Control::colision_cuerpo(Movimiento_jugador *objeto_a,Movimiento_jugador *objeto_b)
 	{
  		cout<<"recta_costado_derecha::"<<objeto_a->pos.x+0.3f<<"\n";
 		cout<<"recta_costado_izquierda::"<<objeto_a->pos.x-0.3f<<"\n";
@@ -79,7 +80,7 @@ void Control::colision_cuerpo(Movimiento *objeto_a,Movimiento *objeto_b)
  		
  	}
  }	
-void Control::colision_cabeza_balon(Movimiento *objeto_a,Movimiento *objeto_pelota)
+void Control::colision_cabeza_balon(Movimiento_jugador *objeto_a,Movimiento_pelota *objeto_pelota)
 	{	
  		float punto=punto_circulo( objeto_pelota->pos.x, objeto_a->pos.x, objeto_pelota->pos.y, objeto_a->pos.y+0.15);
  		cout<<"PUNTO:::"<<punto<<"\n";
@@ -140,7 +141,7 @@ void Control::colision_cabeza_balon(Movimiento *objeto_a,Movimiento *objeto_pelo
 			objeto_pelota->disparo_parabola_izquierda=0;
 		}
 	}
-void Control::colision_costados_balon(Movimiento *objeto_pelota)
+void Control::colision_costados_balon(Movimiento_pelota *objeto_pelota)
 	{	 		
 		if(objeto_pelota->pos.x>=0.90 or objeto_pelota->pos.x<=-0.90)
 		{
@@ -166,7 +167,7 @@ void Control::colision_costados_balon(Movimiento *objeto_pelota)
 			objeto_pelota->parante_derecho=1;
 		}
 	}
-void Control::colision_arcos(Movimiento *objeto_pelota,Movimiento *objeto_jugador1,Movimiento *objeto_jugador2)
+void Control::colision_arcos(Movimiento_pelota *objeto_pelota,Movimiento_jugador *objeto_jugador1,Movimiento_jugador *objeto_jugador2)
 	{	 		
 		if(objeto_pelota->pos.x<=0.85f+0.15f and objeto_pelota->pos.x>=0.85f-0.15f and objeto_pelota->pos.y>=-0.28f-0.6f and objeto_pelota->pos.y<=-0.28f+0.9f)
 		{
@@ -176,6 +177,7 @@ void Control::colision_arcos(Movimiento *objeto_pelota,Movimiento *objeto_jugado
 			objeto_pelota->velocidad.y-=0.005f;
 			objeto_pelota->pos.x+=0.00025;
 			objeto_pelota->gol=1;
+			objeto_jugador1->marcador++;
 			objeto_jugador1->gol=1;
 			objeto_jugador2->gol=1;
 		}
@@ -188,6 +190,7 @@ void Control::colision_arcos(Movimiento *objeto_pelota,Movimiento *objeto_jugado
 			objeto_pelota->velocidad.y-=0.005f;
 			objeto_pelota->pos.x-=0.00025;
 			objeto_pelota->gol=1;
+			objeto_jugador2->marcador++;
 			objeto_jugador1->gol=1;
 			objeto_jugador2->gol=1;
 		}

@@ -9,7 +9,7 @@ using namespace std;
 class Pelota
 {
   public:
-  	Movimiento  *pelota_m;
+  	Movimiento_pelota  *pelota_m;
   	Graficar  	*pelota_g;
   	Control     *pelota_c;
   	Shader      *shader_pelota;

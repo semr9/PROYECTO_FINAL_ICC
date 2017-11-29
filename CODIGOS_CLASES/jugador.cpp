@@ -12,7 +12,7 @@
 #include <iostream>
 #include "jugador.h"
 #include "grafica.h"
-#include "movimiento.h"
+#include "movimiento_jugador.h"
 #include "control.h"
 	
 Jugador::Jugador()
@@ -34,7 +34,7 @@ void Jugador::Cargar_grafica(const char* a, const char* b, const char* c,float (
 void Jugador::Cargar_movimiento()
 	{
 		/*PREPARACION DE NUESTRO  OBJERTO MOVIMEINTO PARA PLAYER1*/
-		player_m=new Movimiento;
+		player_m=new Movimiento_jugador;
 	}
 void Jugador::Cargar_colision()
 	{

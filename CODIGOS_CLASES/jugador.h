@@ -11,7 +11,7 @@ using namespace std;
 class Jugador
 {
   public:
-  	Movimiento  *player_m;
+  	Movimiento_jugador  *player_m;
   	Graficar  	*player_g;
   	Control     *player_c;
   	Shader		*shader_jugador;	 
